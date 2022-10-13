@@ -49,12 +49,13 @@ export class Utils {
   static scrollTo(target: Element, smooth?: boolean) {
     const smoothOpt = smooth ?? true;
     const behavior = smoothOpt ? 'smooth': 'auto';
-    const h = this.getHeaderHeight(); // ヘッダーの高さを取得
+    // const h = this.getHeaderHeight(); // ヘッダーの高さを取得
 
     // Safariの場合はscroll-margin-topが効かないため、位置を計算する必要がある
     const position = target.getBoundingClientRect().top;
     const offsetTop = window.pageYOffset;
-    const positionTop = position + offsetTop - h;
+    // const positionTop = position + offsetTop - h;
+    const positionTop = position + offsetTop;
     window.scrollTo({
       top: positionTop,
       behavior: behavior,

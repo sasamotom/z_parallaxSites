@@ -9,8 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
   general.setAnchorPosition();  // アンカーリンクの位置調整（ページロード時用）
   general.setSmoothScroll();    // スムーススクロール
   general.adjust100vh();        // 100vhを調整
-  const acd = new Accordion();  // アコーディオン
+  // const acd = new Accordion();  // アコーディオン
   const hmb = new Hamburger();  // ハンバーガーメニュー
-  const mdl = new Modal();      // モーダル
-  const tab = new Tab();        // タブ
+  // const mdl = new Modal();      // モーダル
+  // const tab = new Tab();        // タブ
 });

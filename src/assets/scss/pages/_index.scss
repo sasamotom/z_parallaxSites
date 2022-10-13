@@ -1,19 +1,105 @@
 @use "../abstracts" as *;
 
 .main {
-  padding-top: 5rem;
-}
-h2 {
-  padding: 1em 0;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #aaa;
+  // padding-top: 5rem;
 }
 p {
   + p {
     margin-top: 1em;
   }
 }
-.sec-accordion {
-  background: $color02;
+
+.secTemp {
+  padding: 8rem 0;
+  &:nth-of-type(5n + 1) {
+    background: $color01;
+  }
+  &:nth-of-type(5n + 2) {
+    background: $color02;
+  }
+  &:nth-of-type(5n + 3) {
+    background: $color03;
+  }
+  &:nth-of-type(5n + 4) {
+    background: $color04;
+  }
+  &:nth-of-type(5n + 5) {
+    background: $color05;
+  }
+  &_ttl {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    color: $colorText;
+    &En {
+      display: block;
+      margin-left: 1em;
+      font-family: $fontEn;
+      font-size: 1.6rem;
+      color: $colorFrame;
+      white-space: nowrap;
+      &::before {
+        content: "/ ";
+      }
+    }
+  }
+  &_txt {
+    margin-top: 2.4rem;
+    font-size: 1.6rem;
+  }
+}
+.tempList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 5%;
+  margin-top: 4rem;
+  @include mq() {
+    flex-direction: column;
+  }
+}
+.tempInfo {
+  flex: 1;
+  width: 30%;
+  min-width: 250px;
+  max-width: 47.5%;
+  @include mq() {
+    width: 100%;
+    max-width: 100%;
+  }
+  > a {
+    display: block;
+    height: 100%;
+    padding-bottom: 2.4rem;
+    background: #fff;
+    box-shadow: 1rem 1rem 3rem rgba($colorText, 0.2);
+    @include mq() {
+      display: flex;
+      padding: 1.2rem;
+    }
+    @include hover() {
+      box-shadow: 0.5rem 0.5rem 1.5rem rgba($colorText, 0.5);
+    }
+  }
+  &_pic {
+    @include mq() {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 35%;
+    }
+  }
+  &_name {
+    padding: 0 1.6rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-feature-settings: "palt";
+    letter-spacing: 0.05em;
+  }
+  &_txt {
+    padding: 0 1.6rem;
+    margin-top: 1em;
+    font-size: 1.4rem;
+  }
 }
