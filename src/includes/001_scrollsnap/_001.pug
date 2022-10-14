@@ -1,0 +1,102 @@
+.page-scrollSnap.-scrollsnap001#scrollsnap
+  aside.sidebar
+    nav
+      ul.anchorList#anchorList(data-activerow=3)
+        li: a(href="#sec00") MEMO
+        li: a(href="#sec01") SEC01
+        li: a(href="#sec02") SEC02
+        li: a(href="#sec03") SEC03
+        li: a(href="#sec04") SEC04
+        li: a(href="#sec05") SEC05
+        li: a(href="#sec06") SEC06
+  main.main
+    section.sec#sec00
+      .container
+        .sec_contents
+          h2.sec_ttl MEMO
+            span スクロールスナップ（縦方向）
+          p 縦方向へのスクロールにより１画面ずつ縦方向に進む。（CSSで対応）
+          p サイト全体でスクロールスナップを使用する場合は、その領域全体に高さを指定（height: 100vh;）しなければならない。<br>そのため、スクロールバーが二重に出ることがあるので注意。<br>また、アンカーリンクが正常に動作しないパターンもあったため、注意が必要。（htmlタグに高さ100vhを設定したら大丈夫だった）
+          p サイドバーのアンカーリンクの装飾変更は、ulにdata-activeRowとして今アクティブなリンクがどれであるか（0からの数値）をJSにて設定し、そのデータ属性値の場合のul::before位置をCSSで用意している。（Max値は10としている）
+          p アニメーションはCSSアニメーションを利用し、JSのライブラリなどは使用していない。
+    section.sec#sec01
+      .container
+        .sec_contents
+          h2.sec_ttl SEC01
+          p
+            |Labore deserunt labore anim magna cillum commodo ad officia. Adipisicing incididunt cupidatat in Lorem elit Lorem do magna. Esse laborum ut et id laborum consequat laboris. Eiusmod amet consequat id aliquip dolore labore amet do laborum voluptate do eu proident minim. Eiusmod dolore eu veniam veniam reprehenderit veniam. Deserunt labore sint reprehenderit amet qui dolore laboris. Proident tempor pariatur elit fugiat eu tempor consectetur sint et ullamco amet.
+            br
+            |Mollit pariatur mollit et elit adipisicing non fugiat voluptate. Pariatur laborum minim duis proident consequat. Pariatur occaecat magna eiusmod anim anim. Nostrud veniam ipsum proident cupidatat occaecat magna officia do cupidatat.
+            br
+            |Velit qui ut minim consectetur dolor et pariatur est. Anim proident aliqua et sit Lorem. Ex proident amet non minim aute ea est dolor. Dolore exercitation deserunt sint elit consequat esse eu ipsum do officia ea eiusmod. Culpa ipsum labore nulla enim eu do enim ex aute. Pariatur id pariatur laborum est. Pariatur adipisicing aute proident amet exercitation culpa culpa amet officia id quis tempor amet eiusmod.
+            br
+            |Veniam nulla ad qui incididunt in et deserunt reprehenderit. Ea est ex Lorem labore. Ullamco elit ad culpa veniam nisi minim aliqua. Dolor voluptate culpa eu quis id quis tempor sunt duis exercitation. Aliqua minim esse ea do deserunt nisi cupidatat duis pariatur magna non exercitation cupidatat. Consequat Lorem ut consectetur irure sunt Lorem do incididunt eiusmod laborum et aliqua ex ex.
+            br
+            |Non magna labore commodo velit anim eu aute deserunt in eu in. Veniam do ut mollit ex amet laborum pariatur ipsum occaecat labore anim tempor reprehenderit voluptate. Cupidatat et proident duis labore aliqua do nostrud est anim pariatur.
+    section.sec#sec02
+      .container
+        .sec_contents
+          h2.sec_ttl SEC02
+          p
+            |Excepteur occaecat aliqua tempor incididunt id laboris exercitation cupidatat ea incididunt adipisicing laboris. Excepteur quis consequat ea consectetur deserunt nisi. Amet aliquip enim ad dolore. Aute elit occaecat quis tempor consectetur sit excepteur ea non sint excepteur ullamco. Et ex elit fugiat sunt ea.
+            br
+            |Minim aute voluptate duis cillum sit aliquip non exercitation veniam. Deserunt nostrud cillum minim reprehenderit. Ullamco voluptate aliquip ea nulla qui in. Ea ex pariatur et magna do. Ipsum qui adipisicing sunt laboris nisi ea et incididunt do fugiat velit adipisicing laborum. In nulla et commodo dolor consequat.
+            br
+            |Magna nostrud cillum sint aliqua non. Sunt occaecat dolore eiusmod tempor ex sunt dolor veniam. Cillum laborum eu ullamco tempor veniam laboris adipisicing dolore aliquip cupidatat incididunt laboris ad. Ea qui sit eu anim consectetur dolore non ex elit id aliquip quis. Ipsum est est nulla occaecat elit consectetur esse cupidatat. Nulla dolore sit nulla velit exercitation consequat ad. Consectetur proident ut ut consectetur proident pariatur Lorem veniam ex sit culpa dolore nulla.
+            br
+            |Enim laboris quis laborum mollit tempor nulla ipsum occaecat proident minim ea. Sint ad enim cupidatat enim in. Veniam duis sit excepteur ex laboris veniam laborum adipisicing enim pariatur sit. Sit et esse Lorem est labore pariatur et nulla reprehenderit anim. Ullamco consectetur aliqua do laboris et adipisicing commodo eiusmod pariatur sit sunt aute veniam. Esse magna cillum id laboris. Qui adipisicing nulla veniam amet.
+    section.sec#sec03
+      .container
+        .sec_contents
+          h2.sec_ttl SEC03
+          p
+            |Labore deserunt labore anim magna cillum commodo ad officia. Adipisicing incididunt cupidatat in Lorem elit Lorem do magna. Esse laborum ut et id laborum consequat laboris. Eiusmod amet consequat id aliquip dolore labore amet do laborum voluptate do eu proident minim. Eiusmod dolore eu veniam veniam reprehenderit veniam. Deserunt labore sint reprehenderit amet qui dolore laboris. Proident tempor pariatur elit fugiat eu tempor consectetur sint et ullamco amet.
+            br
+            |Mollit pariatur mollit et elit adipisicing non fugiat voluptate. Pariatur laborum minim duis proident consequat. Pariatur occaecat magna eiusmod anim anim. Nostrud veniam ipsum proident cupidatat occaecat magna officia do cupidatat.
+            br
+            |Velit qui ut minim consectetur dolor et pariatur est. Anim proident aliqua et sit Lorem. Ex proident amet non minim aute ea est dolor. Dolore exercitation deserunt sint elit consequat esse eu ipsum do officia ea eiusmod. Culpa ipsum labore nulla enim eu do enim ex aute. Pariatur id pariatur laborum est. Pariatur adipisicing aute proident amet exercitation culpa culpa amet officia id quis tempor amet eiusmod.
+            br
+            |Veniam nulla ad qui incididunt in et deserunt reprehenderit. Ea est ex Lorem labore. Ullamco elit ad culpa veniam nisi minim aliqua. Dolor voluptate culpa eu quis id quis tempor sunt duis exercitation. Aliqua minim esse ea do deserunt nisi cupidatat duis pariatur magna non exercitation cupidatat. Consequat Lorem ut consectetur irure sunt Lorem do incididunt eiusmod laborum et aliqua ex ex.
+            br
+            |Non magna labore commodo velit anim eu aute deserunt in eu in. Veniam do ut mollit ex amet laborum pariatur ipsum occaecat labore anim tempor reprehenderit voluptate. Cupidatat et proident duis labore aliqua do nostrud est anim pariatur.
+    section.sec#sec04
+      .container
+        .sec_contents
+          h2.sec_ttl SEC04
+          p
+            |Excepteur occaecat aliqua tempor incididunt id laboris exercitation cupidatat ea incididunt adipisicing laboris. Excepteur quis consequat ea consectetur deserunt nisi. Amet aliquip enim ad dolore. Aute elit occaecat quis tempor consectetur sit excepteur ea non sint excepteur ullamco. Et ex elit fugiat sunt ea.
+            br
+            |Minim aute voluptate duis cillum sit aliquip non exercitation veniam. Deserunt nostrud cillum minim reprehenderit. Ullamco voluptate aliquip ea nulla qui in. Ea ex pariatur et magna do. Ipsum qui adipisicing sunt laboris nisi ea et incididunt do fugiat velit adipisicing laborum. In nulla et commodo dolor consequat.
+            br
+            |Magna nostrud cillum sint aliqua non. Sunt occaecat dolore eiusmod tempor ex sunt dolor veniam. Cillum laborum eu ullamco tempor veniam laboris adipisicing dolore aliquip cupidatat incididunt laboris ad. Ea qui sit eu anim consectetur dolore non ex elit id aliquip quis. Ipsum est est nulla occaecat elit consectetur esse cupidatat. Nulla dolore sit nulla velit exercitation consequat ad. Consectetur proident ut ut consectetur proident pariatur Lorem veniam ex sit culpa dolore nulla.
+            br
+            |Enim laboris quis laborum mollit tempor nulla ipsum occaecat proident minim ea. Sint ad enim cupidatat enim in. Veniam duis sit excepteur ex laboris veniam laborum adipisicing enim pariatur sit. Sit et esse Lorem est labore pariatur et nulla reprehenderit anim. Ullamco consectetur aliqua do laboris et adipisicing commodo eiusmod pariatur sit sunt aute veniam. Esse magna cillum id laboris. Qui adipisicing nulla veniam amet.
+    section.sec#sec05
+      .container
+        .sec_contents
+          h2.sec_ttl SEC05
+          p
+            |Labore deserunt labore anim magna cillum commodo ad officia. Adipisicing incididunt cupidatat in Lorem elit Lorem do magna. Esse laborum ut et id laborum consequat laboris. Eiusmod amet consequat id aliquip dolore labore amet do laborum voluptate do eu proident minim. Eiusmod dolore eu veniam veniam reprehenderit veniam. Deserunt labore sint reprehenderit amet qui dolore laboris. Proident tempor pariatur elit fugiat eu tempor consectetur sint et ullamco amet.
+            br
+            |Mollit pariatur mollit et elit adipisicing non fugiat voluptate. Pariatur laborum minim duis proident consequat. Pariatur occaecat magna eiusmod anim anim. Nostrud veniam ipsum proident cupidatat occaecat magna officia do cupidatat.
+            br
+            |Velit qui ut minim consectetur dolor et pariatur est. Anim proident aliqua et sit Lorem. Ex proident amet non minim aute ea est dolor. Dolore exercitation deserunt sint elit consequat esse eu ipsum do officia ea eiusmod. Culpa ipsum labore nulla enim eu do enim ex aute. Pariatur id pariatur laborum est. Pariatur adipisicing aute proident amet exercitation culpa culpa amet officia id quis tempor amet eiusmod.
+    section.sec#sec06
+      .container
+        .sec_contents
+          h2.sec_ttl SEC06
+          p
+            |Excepteur occaecat aliqua tempor incididunt id laboris exercitation cupidatat ea incididunt adipisicing laboris. Excepteur quis consequat ea consectetur deserunt nisi. Amet aliquip enim ad dolore. Aute elit occaecat quis tempor consectetur sit excepteur ea non sint excepteur ullamco. Et ex elit fugiat sunt ea.
+            br
+            |Minim aute voluptate duis cillum sit aliquip non exercitation veniam. Deserunt nostrud cillum minim reprehenderit. Ullamco voluptate aliquip ea nulla qui in. Ea ex pariatur et magna do. Ipsum qui adipisicing sunt laboris nisi ea et incididunt do fugiat velit adipisicing laborum. In nulla et commodo dolor consequat.
+            br
+            |Magna nostrud cillum sint aliqua non. Sunt occaecat dolore eiusmod tempor ex sunt dolor veniam. Cillum laborum eu ullamco tempor veniam laboris adipisicing dolore aliquip cupidatat incididunt laboris ad. Ea qui sit eu anim consectetur dolore non ex elit id aliquip quis. Ipsum est est nulla occaecat elit consectetur esse cupidatat. Nulla dolore sit nulla velit exercitation consequat ad. Consectetur proident ut ut consectetur proident pariatur Lorem veniam ex sit culpa dolore nulla.
+            br
+            |Enim laboris quis laborum mollit tempor nulla ipsum occaecat proident minim ea. Sint ad enim cupidatat enim in. Veniam duis sit excepteur ex laboris veniam laborum adipisicing enim pariatur sit. Sit et esse Lorem est labore pariatur et nulla reprehenderit anim. Ullamco consectetur aliqua do laboris et adipisicing commodo eiusmod pariatur sit sunt aute veniam. Esse magna cillum id laboris. Qui adipisicing nulla veniam amet.
+            br
+            |Minim aute voluptate duis cillum sit aliquip non exercitation veniam. Deserunt nostrud cillum minim reprehenderit. Ullamco voluptate aliquip ea nulla qui in. Ea ex pariatur et magna do. Ipsum qui adipisicing sunt laboris nisi ea et incididunt do fugiat velit adipisicing laborum. In nulla et commodo dolor consequat.
+            br
+            |Magna nostrud cillum sint aliqua non. Sunt occaecat dolore eiusmod tempor ex sunt dolor veniam. Cillum laborum eu ullamco tempor veniam laboris adipisicing dolore aliquip cupidatat incididunt laboris ad. Ea qui sit eu anim consectetur dolore non ex elit id aliquip quis. Ipsum est est nulla occaecat elit consectetur esse cupidatat. Nulla dolore sit nulla velit exercitation consequat ad. Consectetur proident ut ut consectetur proident pariatur Lorem veniam ex sit culpa dolore nulla.
+            br
+            |Enim laboris quis laborum mollit tempor nulla ipsum occaecat proident minim ea. Sint ad enim cupidatat enim in. Veniam duis sit excepteur ex laboris veniam laborum adipisicing enim pariatur sit. Sit et esse Lorem est labore pariatur et nulla reprehenderit anim. Ullamco consectetur aliqua do laboris et adipisicing commodo eiusmod pariatur sit sunt aute veniam. Esse magna cillum id laboris. Qui adipisicing nulla veniam amet.
+

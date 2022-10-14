@@ -1,0 +1,162 @@
+@use "../abstracts" as *;
+@use "sass:math";
+@use "sass:list";
+
+// 【スクロールスナップ関連】
+// htmlタグ
+.height100vh {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+// スナップする領域
+.-scrollsnap001 {
+  .sec {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+// 以下装飾
+.page-scrollSnap {
+  .sidebar {
+    position: fixed;
+    top: 8rem;
+    left: 2rem;
+    z-index: 5;
+    .anchorList {
+      $linkFontSize: 1.2rem;
+      $linkPadding: 0.8rem;
+      $linkGap: 1.2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: $linkGap;
+      &::before {
+        position: absolute;
+        top: 0;
+        left: -0.3rem;
+        z-index: -1;
+        display: block;
+        width: $linkFontSize + $linkPadding * 2;
+        height: $linkFontSize + $linkPadding * 2;
+        content: "";
+        transition: 0.3s top, 0.3s background-color;
+      }
+      @for $i from 0 through 10 {
+        &[data-activerow="#{$i}"] {
+          &::before {
+            top: 0rem + ($linkFontSize + $linkPadding * 2 + $linkGap) * $i;
+            background-color: list.nth(
+              $mainColors,
+              (($i + 1) % list.length($mainColors)) + 1
+            );
+          }
+        }
+      }
+      > li {
+      }
+      a {
+        display: block;
+        padding: $linkPadding;
+        font-family: $fontEn;
+        font-size: $linkFontSize;
+        line-height: 1;
+      }
+    }
+  }
+  .sec {
+    position: relative;
+    padding: 5rem;
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      transition: 0.3s width, 0.3s height;
+    }
+    &::before {
+      top: 0;
+      right: 0;
+    }
+    &::after {
+      bottom: 0;
+      left: 0;
+    }
+    @for $i from 1 through list.length($mainColors) {
+      &:nth-of-type(#{list.length($mainColors)}n + #{$i}) {
+        background: list.nth(
+          $mainColors,
+          (($i - 1) % list.length($mainColors) + 1)
+        );
+        &::before,
+        &::after {
+          background-color: list.nth(
+            $mainColors,
+            (($i) % list.length($mainColors)) + 1
+          );
+        }
+      }
+    }
+    &.-active {
+      &::before,
+      &::after {
+        width: 30%;
+        height: 30%;
+      }
+      .sec_contents {
+        left: 0;
+        opacity: 1;
+      }
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    &_contents {
+      position: relative;
+      left: 5rem;
+      z-index: 1;
+      width: 100%;
+      max-height: 100%;
+      padding: 5rem;
+      overflow-y: auto;
+      background: #fff;
+      box-shadow: none;
+      opacity: 0;
+      transition: 0.5s;
+      @include mq() {
+        padding: 3rem 2rem;
+      }
+    }
+    &_ttl {
+      font-family: $fontEn;
+      font-size: 4.2rem;
+      @include mq() {
+        font-size: 3.2rem;
+      }
+      span {
+        padding-left: 0.5em;
+        font-size: 50%;
+        &::before {
+          content: " / ";
+        }
+      }
+    }
+    p {
+      margin-top: 2em;
+      line-height: 2;
+      @include mq() {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

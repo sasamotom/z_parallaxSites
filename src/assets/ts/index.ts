@@ -4,6 +4,9 @@ import { Hamburger } from './class/Hamburger';
 import { Modal } from './class/Modal';
 import { Tab } from './class/Tab';
 
+// アニメーション関連
+import { ScrollSnap } from './animation/scrollsnap';
+
 window.addEventListener('DOMContentLoaded', () => {
   const general = new General();
   general.setAnchorPosition();  // アンカーリンクの位置調整（ページロード時用）
@@ -13,4 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const hmb = new Hamburger();  // ハンバーガーメニュー
   // const mdl = new Modal();      // モーダル
   // const tab = new Tab();        // タブ
+
+  if (document.getElementById('scrollsnap')) {
+    new ScrollSnap();
+  }
 });
