@@ -31,9 +31,9 @@ p {
     display: flex;
     align-items: flex-end;
     padding: 0;
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: bold;
-    color: $colorText;
+    color: $colorFrame;
     &En {
       display: block;
       margin-left: 1em;
@@ -54,7 +54,7 @@ p {
 .tempList {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem 5%;
+  gap: 2rem 2%;
   margin-top: 4rem;
   @include mq() {
     flex-direction: column;
@@ -62,9 +62,9 @@ p {
 }
 .tempInfo {
   flex: 1;
-  width: 30%;
-  min-width: 250px;
-  max-width: 47.5%;
+  width: 32%;
+  min-width: 280px;
+  max-width: 49%;
   @include mq() {
     width: 100%;
     max-width: 100%;
@@ -81,6 +81,33 @@ p {
     }
     @include hover() {
       box-shadow: 0.5rem 0.5rem 1.5rem rgba($colorText, 0.5);
+    }
+    &[href=""] {
+      position: relative;
+      pointer-events: none;
+      box-shadow: none;
+      box-shadow: 0.1rem 0.1rem 0.5rem rgba($colorText, 0.03);
+      &::before {
+        position: absolute;
+        top: -1.6rem;
+        left: 50%;
+        display: block;
+        padding: 0.5em 1em;
+        font-family: $fontEn;
+        font-size: 2.4rem;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        content: "coming soon...";
+        background: $colorFrame;
+        opacity: 0.6;
+        transform: translateX(-50%) rotate(-5deg);
+        @include mq() {
+          top: 50%;
+          opacity: 0.9;
+          transform: translate(-50%, -50%) rotate(-5deg);
+        }
+      }
     }
   }
   &_pic {
