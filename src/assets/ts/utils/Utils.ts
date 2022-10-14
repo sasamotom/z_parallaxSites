@@ -55,9 +55,12 @@ export class Utils {
     const position = target.getBoundingClientRect().top;
     const offsetTop = window.pageYOffset;
     // const positionTop = position + offsetTop - h;
+    const offsetLeft = window.pageXOffset;
     const positionTop = position + offsetTop;
+    const positionLeft = target.getBoundingClientRect().left + offsetLeft;
     window.scrollTo({
       top: positionTop,
+      left: positionLeft,
       behavior: behavior,
     });
   }
