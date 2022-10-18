@@ -61,10 +61,7 @@ p {
   }
 }
 .tempInfo {
-  flex: 1;
   width: 32%;
-  min-width: 280px;
-  max-width: 49%;
   @include mq() {
     width: 100%;
     max-width: 100%;

@@ -6,6 +6,7 @@ import { Tab } from './class/Tab';
 
 // アニメーション関連
 import { ScrollSnap } from './animation/scrollsnap';
+import { CrossScroll } from './animation/crossscroll';
 
 window.addEventListener('DOMContentLoaded', () => {
   const general = new General();
@@ -19,5 +20,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (document.getElementById('scrollsnap')) {
     new ScrollSnap();
+  }
+  if (document.getElementById('crossscroll')) {
+    new CrossScroll();
   }
 });
