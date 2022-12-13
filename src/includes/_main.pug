@@ -30,7 +30,7 @@ main.main
     .container
       h2.secTemp_ttl 交差方向へのスクロール
         span.secTemp_ttlEn cross-scroll
-      p.secTemp_txt 縦方向のスクロールで横にスクロールする（スクロールしているように見える）サンプル。
+      p.secTemp_txt 縦方向のスクロールで横にスクロールする（スクロールしているように見える）サンプル。<br>GSAP使用。
       ul.tempList
         li.tempInfo
           a(href="/011_crossscroll/")
@@ -46,3 +46,49 @@ main.main
             .tempInfo_detail
               h3.tempInfo_name 斜めに移動
               p.tempInfo_txt 縦スクロールにより斜めに進む
+  section.secTemp#sec021
+    .container
+      h2.secTemp_ttl 部分的な追従レイアウト
+        span.secTemp_ttlEn fixed-layout
+      p.secTemp_txt 一部分だけ追従となるレイアウトのサンプル。
+      ul.tempList
+        li.tempInfo
+          a(href="")
+            .tempInfo_pic
+              img(src="/assets/images/img021.svg", alt="", width="100", height="100", loading="lazy")
+            .tempInfo_detail
+              h3.tempInfo_name 画面の半分が追従
+              p.tempInfo_txt 該当セクションのみ、画面の半分が追従する
+  section.secTemp#sec031
+    .container
+      h2.secTemp_ttl 特殊なセクション遷移
+        span.secTemp_ttlEn move-animation
+      p.secTemp_txt 特殊なセクション間移動のサンプル。
+      ul.tempList
+        li.tempInfo
+          a(href="")
+            .tempInfo_pic
+              img(src="/assets/images/img031.svg", alt="", width="100", height="100", loading="lazy")
+            .tempInfo_detail
+              h3.tempInfo_name セクション毎に前後に配置
+              p.tempInfo_txt 下にスクロールすることで、後ろのセクションを前に表示する
+  section.secTemp#sec041
+    .container
+      h2.secTemp_ttl 背景の装飾
+        span.secTemp_ttlEn background-animation
+      p.secTemp_txt 背景の装飾にパララックスを掛けるサンプル。
+      ul.tempList
+        li.tempInfo
+          a(href="")
+            .tempInfo_pic
+              img(src="/assets/images/img041.svg", alt="", width="100", height="100", loading="lazy")
+            .tempInfo_detail
+              h3.tempInfo_name 背景要素の移動（縦方向）
+              p.tempInfo_txt 背景の要素がスクロールに合わせて縦に移動する
+        li.tempInfo
+          a(href="")
+            .tempInfo_pic
+              img(src="/assets/images/img042.svg", alt="", width="100", height="100", loading="lazy")
+            .tempInfo_detail
+              h3.tempInfo_name 背景要素の移動（横方向）
+              p.tempInfo_txt 背景の要素がスクロールに合わせて横に移動する

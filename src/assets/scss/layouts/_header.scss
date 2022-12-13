@@ -24,6 +24,11 @@
       color: $colorFrame;
     }
   }
+  a {
+    @include hover() {
+      text-shadow: 1px 3px 5px rgba($colorText, 0.3);
+    }
+  }
 }
 
 // グローバルナビゲーション
