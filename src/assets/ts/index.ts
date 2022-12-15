@@ -7,6 +7,7 @@ import { Tab } from './class/Tab';
 // アニメーション関連
 import { ScrollSnap } from './animation/scrollsnap';
 import { CrossScroll } from './animation/crossscroll';
+import { BackgroundAnime } from './animation/backgroundanime';
 
 window.addEventListener('DOMContentLoaded', () => {
   const general = new General();
@@ -23,5 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   if (document.getElementById('crossscroll')) {
     new CrossScroll();
+  }
+  if (document.getElementById('backgroundanimation')) {
+    new BackgroundAnime();
   }
 });
