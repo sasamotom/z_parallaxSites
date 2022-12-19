@@ -1,0 +1,49 @@
+.page-sectionAnimation.-sectionAnimation031#sectionanimation
+  main.main
+    section.sec
+      .container
+        .sec_contents
+          h2.sec_ttl Slides of section
+            span 縦スクロールでスライドっぽく次のセクションを表示
+          p スライドが切り替わるような仕組みを構築できるか試してみたところ、構築可能だった。<br>（プラグイン等は一切未使用）
+    section.sec
+      .container
+        .sec_contents
+          h2.sec_ttl How to build
+            span 仕組み
+          ol
+            li セクション（今回はセクションごとにスライド１枚としている）を一覧で取得
+            li 表示領域自体は position: fixed; で固定しているので、画面をスクロールできるようにするため、高さが100vhのスクロール用div（中身は何も無し）をセクションの個数分用意<br>　→ これで画面がスクロールできるようになる
+            li スクロール用divに Intersection Observer でイベント登録。<br>スクロールしてdivに入ったら、各セクションのスタイルを調整する。<br>（今回はfilter, boxShadow, transform）
+          p 上記のようにかなりシンプルな仕組みとなっている。
+    section.sec
+      .container
+        .sec_contents
+          h2.sec_ttl Other
+            span 他にどのようなことができるか
+          p 各スライドはtransformで位置調整しているため、今回のように前後に配置する以外にも、<br>横に並べたり斜めに配置したりと今回と違うレイアウトでも対応可能。
+    section.sec
+      .container
+        .sec_contents
+          h2.sec_ttl SEC03
+          p テキストテキストテキストテキスト
+    section.sec
+      .container
+        .sec_contents
+          h2.sec_ttl SEC04
+          p テキストテキストテキストテキスト
+    section.sec
+      .container
+        .sec_contents
+          h2.sec_ttl SEC05
+          p テキストテキストテキストテキスト
+    section.sec
+      .container
+        .sec_contents
+          h2.sec_ttl SEC06
+          p テキストテキストテキストテキスト
+    section.sec
+      .container
+        .sec_contents
+          h2.sec_ttl SEC07
+          p テキストテキストテキストテキスト
