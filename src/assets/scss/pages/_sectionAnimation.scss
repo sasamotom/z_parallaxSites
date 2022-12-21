@@ -23,7 +23,6 @@
       padding: 2rem;
       margin: auto;
       border: 1px solid $colorFrame;
-      box-shadow: 20px 20px 50px rgba($colorText, 0.05);
       transition: 0.3s;
       @for $i from 1 through list.length($mainColors) {
         &:nth-of-type(#{list.length($mainColors)}n + #{$i}) {
@@ -81,4 +80,130 @@
       }
     }
   }
+  &.-sectionAnimation032 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #0f0b1d;
+    .main {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
+      transform-style: preserve-3d;
+      perspective: 500px;
+    }
+    .sec {
+      position: absolute;
+      width: 90%;
+      max-width: 800px;
+      height: 80vh;
+      padding: 2rem;
+      margin: auto;
+      // border: 1px solid #00f;
+      transition: 1s;
+      &_contents {
+        position: relative;
+        height: calc(80vh - 4rem);
+        overflow-y: auto;
+      }
+      &_ttl {
+        padding: 0.5em 0;
+        font-family: $fontEn;
+        font-size: 3.6rem;
+        font-size: 3.2rem;
+        color: #fff;
+        text-align: center;
+        text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
+        span {
+          padding-left: 0.5em;
+          font-size: 50%;
+          &::before {
+            content: " / ";
+          }
+        }
+      }
+      p {
+        margin-top: 2em;
+        line-height: 2;
+        color: #fff;
+        text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
+        @include mq() {
+          font-size: 1.4rem;
+        }
+        a {
+          display: inline-block;
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+    }
+    .kira {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      border-radius: 50%;
+      &::before {
+        position: absolute;
+        top: 30px;
+        left: -50px;
+        display: block;
+        width: 50%;
+        aspect-ratio: 1;
+        content: "";
+        background: inherit;
+        border-radius: 50%;
+      }
+      &::after {
+        position: absolute;
+        top: 10px;
+        left: -20px;
+        display: block;
+        width: 300%;
+        height: 600%;
+        content: "";
+        background: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280.167%22%20height%3D%2297.129%22%20viewBox%3D%220%200%2080.167%2097.129%22%3E%20%3Cpath%20id%3D%22%E3%83%91%E3%82%B9_3%22%20data-name%3D%22%E3%83%91%E3%82%B9%203%22%20d%3D%22M1181.242%2C4574.9c-.164%2C2.109-1.528%2C17.722-9.126%2C26.368s-29.991%2C12.823-29.991%2C12.823%2C17.222%2C1.222%2C25.958%2C7.626%2C13.23%2C50.671%2C13.158%2C50.31c.28-.192%2C1.6-41.7%2C10.272-50.31s30.778-7.626%2C30.778-7.626-26.176-2.883-34.165-12.823S1181.242%2C4574.9%2C1181.242%2C4574.9Z%22%20transform%3D%22translate(-1142.125%20-4574.897)%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E")
+          center center / contain no-repeat;
+        animation: kirakira 1s infinite;
+      }
+      @for $i from 1 through 10 {
+        &:nth-of-type(#{$i}) {
+          top: random(100) * 1%;
+          left: random(100) * 1%;
+          &::before {
+            top: random(100) * 50%;
+            left: random(100) * 50%;
+            width: random(100) * 1%;
+          }
+          &::after {
+            top: random(100) * 40%;
+            left: random(100) * 40%;
+            height: (400 + 2 * random(100)) * 1%;
+            animation-delay: $i * 0.3s;
+          }
+        }
+      }
+    }
+    @keyframes kirakira {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(0.8);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+}
+.scrollCont {
+  position: relative;
+  z-index: -10;
 }
