@@ -1,0 +1,50 @@
+.page-sectionAnimation.-sectionAnimation033#sectionanimation
+  main.main
+    section.sec2
+      .container
+        h2.sec2_ttl Description sections#1
+          span 縦スクロールで次のセクションを表示
+        p 画面の半分を図、もう半分をテキストにして、図とその説明を順番にしていくイメージ。
+    section.sec2
+      .container
+        h2.sec2_ttl Description sections#2
+          span ページの途中にセクションが進むアニメーションを入れる
+        p 031, 032はページ全体を固定領域として置いていたが、今回はページの途中で固定となるように対応した。
+
+    .sec033FixedArea
+      .sec033Container
+        .sec033Container_fixed
+          .figure
+            ol
+              li: span sec#1
+              li: span sec#2
+              li: span sec#3
+              li: span sec#4
+          section.sec
+            .container
+              .sec_contents
+                h2.sec_ttl section#1
+                p Minim enim qui occaecat id irure magna esse duis anim consectetur ullamco qui nulla et. Cillum sint cupidatat cillum fugiat cupidatat nulla officia. Dolor excepteur nulla amet ullamco non officia et aliqua. Minim ullamco laboris exercitation ex culpa. Fugiat laboris qui ad dolore magna dolore incididunt ipsum in sint do pariatur adipisicing. Et dolor veniam aliqua mollit laboris cillum officia eiusmod. Exercitation elit ullamco culpa mollit quis ipsum esse.
+          section.sec
+            .container
+              .sec_contents
+                h2.sec_ttl section#2
+                p Esse est labore laboris laboris irure sunt deserunt eu tempor adipisicing qui. Labore veniam proident dolore consequat. Ea ex sunt deserunt aliqua.
+          section.sec
+            .container
+              .sec_contents
+                h2.sec_ttl section#3
+                p Nulla irure consectetur consequat occaecat. Proident qui commodo esse tempor fugiat. Sunt elit voluptate mollit nulla do consequat eiusmod in magna sint aute in duis. Duis non laboris ea quis. Proident ipsum incididunt consectetur eu Lorem do ad anim esse incididunt velit. Ullamco fugiat eu deserunt tempor quis. Ullamco anim est consequat incididunt velit consequat officia.
+          section.sec
+            .container
+              .sec_contents
+                h2.sec_ttl section#4
+                p Eu exercitation minim mollit nulla id aliquip do ex. Duis cillum non excepteur labore excepteur ut aute pariatur eiusmod dolore consectetur aliqua. Aliqua consequat culpa ut non mollit dolore tempor sint.
+
+    section.sec2
+      .container
+        h2.sec2_ttl The end
+          span ここで終わり
+        p 031などと同じような仕組みと、position: sticky; を使用することでうまく構築できた。
+        p 今回は図表も更新するために、図表の方とセクションの方にdata属性で今アクティブなセクション番号のみをセットするようにして、<br>装飾・アニメーションは全てCSSに記載している。
+        p 円弧を描くアニメーションはclip-pathで実装したが、完全に綺麗に動かすならsvgにするのがベター。

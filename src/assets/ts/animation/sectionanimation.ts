@@ -5,6 +5,7 @@
 namespace Const {
   export const CLASS_CONTAINER = '-sectionAnimation031';   // コンテナクラス名
   export const CLASS_CONTAINER32 = '-sectionAnimation032';  // コンテナクラス名
+  export const CLASS_CONTAINER33 = 'sec033Container';       // コンテナクラス名
   export const CLASS_SECTION = 'sec';                       // セクションクラス名
   export const CLASS_SCROLL = 'scrollCont';                 // スクロール用クラス名
 }
@@ -13,6 +14,7 @@ export class SectionAnimation {
   private _secList:  NodeListOf<HTMLElement>;   // セクションリスト
   private _container: HTMLElement | null;       // セクションリストを含むコンテナ
   private _container32: HTMLElement | null;       // セクションリストを含むコンテナ
+  private _container33: HTMLElement | null;       // セクションリストを含むコンテナ
   // ----------------------------------------------------
   // 機能：コンストラクタ
   // 引数：なし
@@ -23,10 +25,14 @@ export class SectionAnimation {
     this._secList = document.querySelectorAll('.' + Const.CLASS_SECTION);
     this._container = document.querySelector('.' + Const.CLASS_CONTAINER);
     this._container32 = document.querySelector('.' + Const.CLASS_CONTAINER32);
+    this._container33 = document.querySelector('.' + Const.CLASS_CONTAINER33);
     if (this._secList.length > 0 && this._container !== null) {
       this._setPaperSection();
     }
     if (this._secList.length > 0 && this._container32 !== null) {
+      this._setPaperSection();
+    }
+    if (this._secList.length > 0 && this._container33 !== null) {
       this._setPaperSection();
     }
   }
@@ -52,6 +58,10 @@ export class SectionAnimation {
       }
       else if (this._container32) {
         (this._container32.parentNode)?.appendChild(scrollSec);
+      }
+      else if (this._container33) {
+        (this._container33.parentNode)?.appendChild(scrollSec);
+        console.log(scrollSec)
       }
     }
 
@@ -119,6 +129,9 @@ export class SectionAnimation {
         el.style.transform = 'translate(50%, 0) rotateY(' + no * 20 + 'deg)';
       }
     }
+    else if (this._container33) {
+      el.setAttribute('data-paperno', no.toString());
+    }
   }
 
   // ----------------------------------------------------
@@ -135,6 +148,13 @@ export class SectionAnimation {
            // セクションにスタイルをつける
           for (let i = 0; i < this._secList.length; i++) {
             this._setStyle(this._secList[i], i - frontNo);
+          }
+
+          if (this._container33) {
+            const figure = document.querySelector('.figure');
+            if (figure) {
+              figure.setAttribute('data-currentno', frontNo.toString());
+            }
           }
         }
       }
