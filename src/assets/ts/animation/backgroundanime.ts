@@ -31,6 +31,24 @@ export class BackgroundAnime {
     this._up('.-anime24', 1000, 2);   // 下に移動
     this._up('.-anime25', 1000, 1);
     this._up('.-anime26', 1000, 1.5);
+
+    // スクロールに合わせて要素を右に移動させる
+    this._toRightWithScroll('.-animeH01', -700, 700);
+    this._toRightWithScroll('.-animeH02', -200, 200);
+    this._toRightWithScroll('.-animeH03', -50, 100);
+    this._toRightWithScroll('.bg_h01', 0, 100);
+     // スクロールに合わせて要素を左に移動させる
+    this._toRightWithScroll('.-animeH11', 300, -300);
+    this._toRightWithScroll('.-animeH12', 100, -100);
+    this._toRightWithScroll('.-animeH13', 50, -50);
+    this._toRightWithScroll('.bg_h02', 50, -50);
+    // 表示位置にきたらアニメーションを開始する
+    this._toRight('.-animeH21', 2000, 1);     // 右に移動
+    this._toRight('.-animeH22', 2000, 4);
+    this._toRight('.-animeH23', 2000, 8);
+    this._toRight('.-animeH24', -2000, 3);    // 左に移動
+    this._toRight('.-animeH25', -2000, 1.5);
+    this._toRight('.-animeH26', -2000, 5);
   }
 
   // ----------------------------------------------------
@@ -96,4 +114,64 @@ export class BackgroundAnime {
       );
     });
   }
+
+  // ----------------------------------------------------
+  // 機能：装飾をスクロールと一緒に右に移動させる
+  // 引数：selecter  セレクタ（ここに指定したもの全てにアニメーション）
+  //      from      開始位置
+  //      to        終了位置
+  // 返値：なし
+  //----------------------------------------------------
+  _toRightWithScroll(selector: string, from: number, to: number) {
+    const elements = document.querySelectorAll(selector);
+    let start = "top bottom";   // startに設定する値
+    let end ="bottom top"       // endに設定する値
+    elements.forEach((elem) => {
+      gsap.fromTo(
+        elem,
+        { x:  from},
+        {
+          x: to,
+          ease: "none", // イージングなし
+          scrollTrigger: {
+            trigger: elem,
+            start: start,         // 1つ目の値がtriggerで指定した要素の開始位置。2つ目の値が画面の開始位置
+            end: end,             // 1つ目の値がtriggerで指定した要素の終了位置。2つ目の値が画面の終了位置
+            scrub: true,          // 要素をスクロールに合わせて移動させる
+            // markers: true,        // 開始位置、終了位置を調整確認する際に使用します
+          },
+        },
+      );
+    });
+  }
+
+  // ----------------------------------------------------
+  // 機能：装飾を上に移動させる
+  // 引数：selecter  セレクタ（ここに指定したもの全てにアニメーション）
+  //      to        終了位置
+  //      duration  アニメーション動作時間（単位：秒）
+  // 返値：なし
+  //----------------------------------------------------
+  _toRight(selector: string, to: number, duration: number) {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((elem) => {
+      gsap.to(
+        elem,
+        {
+          x: to,
+          duration: duration,   // 何秒かけてアニメーションするか指定
+          ease: "none", // イージングなし
+          scrollTrigger: {
+            trigger: elem,
+            start: 'top bottom+=100px',
+            // once: true,     //  この指定によって１度だけアニメーションされる
+            // markers: true,        // 開始位置、終了位置を調整確認する際に使用します
+          },
+          // repeat: -1,     // -1とすると無限ループ
+          // repeatDelay: 1  // 繰り返し時のdelay（単位：秒）
+        },
+      );
+    });
+  }
+
 }
